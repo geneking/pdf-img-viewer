@@ -16,7 +16,7 @@
   width: .6rem;
   height: .6rem;
   background-size: 100%;
-  background: url('../src/images/loading.gif') no-repeat;
+  background: url('./../images/loading.gif') no-repeat;
 }
 .preview .page-head{
   position: absolute;
@@ -42,9 +42,9 @@
   border-left: 0px;
   cursor: pointer;
 }
-.zoom-box .zoom{background: url('../src/images/zoom.png') no-repeat center;}
-.zoom-box .zoom-in{background: url('../src/images/zoom-in.png') no-repeat center;}
-.zoom-box .zoom-out{background: url('../src/images/zoom-out.png') no-repeat center;}
+.zoom-box .zoom{background: url('./../images/zoom.png') no-repeat center;}
+.zoom-box .zoom-in{background: url('./../images/zoom-in.png') no-repeat center;}
+.zoom-box .zoom-out{background: url('./../images/zoom-out.png') no-repeat center;}
 .page-change{
   width: 5.6rem;
   text-align: center;
