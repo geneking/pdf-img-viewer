@@ -1,0 +1,42 @@
+body{
+  width: 6.4rem;
+  margin: 0 auto;
+  background: #f2f6f8;
+  color: #323440;
+  opacity: 0;
+  font-size: .28rem;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+}
+.title{
+  height: 1rem;
+  line-height: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: .36rem;
+  text-align: center;
+  background-color: #00bafe;
+}
+.grid{
+  width: 5.6rem;
+  margin: .2rem auto;
+  padding: .3rem .2rem;
+  background-color: #fff;
+  border: 1px solid #d6d7e3;
+  overflow: hidden;
+}
+.button{
+  display: block;
+  width: 6rem;
+  height: .8rem;
+  line-height: .8rem;
+  margin: .3rem auto;
+  font-size: .32rem;
+  color: #fff;
+  text-align: center;
+  background-color: #00bafe;
+  border-radius: .05rem;
+}
