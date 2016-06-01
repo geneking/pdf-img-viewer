@@ -85,8 +85,7 @@
      * @description 恢复原样/重置
      */
     zoom: function() {
-      config.previewBox.off(MT.TOUCH_START)
-      .on("click", '.zoom', function() {
+      config.previewBox.on(MT.TOUCH_START, '.zoom', function() {
         action.reset();
       });
     },
@@ -97,7 +96,7 @@
      */
     zoomIn: function() {
 
-      config.previewBox.on("click", '.zoom-in', function() {
+      config.previewBox.on(MT.TOUCH_START, '.zoom-in', function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() - config.range;
         if((imgWidth) > config.minWidth){
@@ -119,7 +118,7 @@
      * @description 放大
      */
     zoomOut: function() {
-      config.previewBox.on("click", '.zoom-out', function() {
+      config.previewBox.on(MT.TOUCH_START, '.zoom-out', function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() + config.range;
         if((imgWidth) < config.maxWidth){
@@ -141,7 +140,7 @@
      * @description 上一页
      */
     prevPage: function() {
-      config.previewBox.on("click", '.page-prev', function() {
+      config.previewBox.on(MT.TOUCH_START, '.page-prev', function() {
         if(config.pageIndex == 1) return;
         action.loadImg(--config.pageIndex-1);
         $('.page-now').text(config.pageIndex);
@@ -153,7 +152,7 @@
      * @description 下一页
      */
     nextPage: function() {
-      config.previewBox.on("click", '.page-next', function() {
+      config.previewBox.on(MT.TOUCH_START, '.page-next', function() {
         if(config.pageIndex == config.pageCount) return;
         action.loadImg(++config.pageIndex-1);
         $('.page-now').text(config.pageIndex);
@@ -170,11 +169,14 @@
     $.extend(config, option);
 
     renderTpl();
-    config.imgBox   = $('.img-item');
-    config.minWidth = option.previewBox.width();
+    config.imgBox = $('.img-item');
     $('.page-total').text(config.pageCount);
     action.loadImg(0);
-    listener.init();
+    //p2m方法可能未适配完，做延时处理
+    setTimeout(function(){
+      config.minWidth = option.previewBox.width();
+      listener.init();
+    },1000);
   };
 
   return {pdfView: $.pdfView};
