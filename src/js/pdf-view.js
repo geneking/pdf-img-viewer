@@ -70,6 +70,7 @@
       };
       image.src = config.imgList[index];
     },
+
     /**
      * @function reset
      * @description 重置pdf图片至原始大小
@@ -97,7 +98,7 @@
      * @description 恢复原样/重置
      */
     zoom: function() {
-      config.previewBox.on(MT.TOUCH_START, '.zoom', function() {
+      $('.zoom').on(MT.TOUCH_START, function() {
         action.reset();
       });
     },
@@ -107,7 +108,7 @@
      * @description 缩小
      */
     zoomIn: function() {
-      config.previewBox.on(MT.TOUCH_START, '.zoom-in', function() {
+      $('.zoom-in').on(MT.TOUCH_START, function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() - config.range;
         if(imgWidth > config.minWidth){
@@ -129,7 +130,7 @@
      * @description 放大
      */
     zoomOut: function() {
-      config.previewBox.on(MT.TOUCH_START, '.zoom-out', function() {
+      $('.zoom-out').on(MT.TOUCH_START, function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() + config.range;
         if(imgWidth < config.maxWidth){
@@ -151,7 +152,7 @@
      * @description 上一页
      */
     prevPage: function() {
-      config.previewBox.on(MT.TOUCH_START, '.page-prev', function() {
+      $('.page-prev').on(MT.TOUCH_START, function() {
         if(config.pageIndex == 1) return;
         action.loadImg(--config.pageIndex-1);
         $('.page-now').text(config.pageIndex);
@@ -163,7 +164,7 @@
      * @description 下一页
      */
     nextPage: function() {
-      config.previewBox.on(MT.TOUCH_START, '.page-next', function() {
+      $('.page-next').on(MT.TOUCH_START, function() {
         if(config.pageIndex == config.pageCount) return;
         action.loadImg(++config.pageIndex-1);
         $('.page-now').text(config.pageIndex);
@@ -186,8 +187,8 @@
 
     renderTpl();
     config.imgBox = $('.img-item');
-    $('.page-total').text(config.pageCount);
     action.loadImg(0);
+    $('.page-total').text(config.pageCount);
     //p2m方法可能未适配完，做延时处理
     setTimeout(function(){
       config.minWidth = option.previewBox.width();
