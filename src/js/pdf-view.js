@@ -99,7 +99,7 @@
       config.previewBox.on(MT.TOUCH_START, '.zoom-in', function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() - config.range;
-        if((imgWidth) > config.minWidth){
+        if(imgWidth > config.minWidth){
           img.css({
             width: imgWidth,
             height: imgWidth*config.zoom
@@ -121,7 +121,7 @@
       config.previewBox.on(MT.TOUCH_START, '.zoom-out', function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() + config.range;
-        if((imgWidth) < config.maxWidth){
+        if(imgWidth < config.maxWidth){
           img.css({
             width: imgWidth,
             height: imgWidth*config.zoom
