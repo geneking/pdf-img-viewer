@@ -6,7 +6,7 @@
 
  (function(factory){
     if (typeof define === "function" && define.amd) {
-        define(factory);
+        define(['Zepto'], factory);
     } else {
         factory(Zepto);
     }
