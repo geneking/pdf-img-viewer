@@ -107,7 +107,6 @@
      * @description 缩小
      */
     zoomIn: function() {
-
       config.previewBox.on(MT.TOUCH_START, '.zoom-in', function() {
         var img = config.imgBox.find('img'),
             imgWidth = img.width() - config.range;
