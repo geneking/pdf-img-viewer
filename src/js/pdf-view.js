@@ -25,7 +25,10 @@
     previewBox: null //外层容器
   };
 
-  //模板
+  /**
+   * @function renderTpl
+   * @description 渲染模板
+   */
   var renderTpl =  function(){
     var tpl = '<div class="preview">\
                 <div class="page-head">\
@@ -51,6 +54,10 @@
 
   //操作
   var action = {
+    /**
+     * @function loadImg
+     * @description 加载pdf图片
+     */
     loadImg: function(index){
       var image = new Image(),
           container = config.previewBox.find('.preview');
@@ -63,6 +70,10 @@
       };
       image.src = config.imgList[index];
     },
+    /**
+     * @function reset
+     * @description 重置pdf图片至原始大小
+     */
     reset: function(){
       config.imgBox.find('img').css({
         width: config.imgBox.width(),
@@ -71,6 +82,7 @@
     }
   };
 
+  //事件监听
   var listener = {
     init: function() {
       this.zoom();
@@ -160,6 +172,11 @@
     }
   };
 
+  /**
+   * @function pdfView
+   * @description 外部调用接口
+   * @param {pageCount:总页数, imgList:pdf图片列表, previewBox: 图片装载容器}
+   */
   $.pdfView = function(_option){
     var option = $.extend({
       pageCount: 0,
