@@ -80,6 +80,17 @@
         width: config.imgBox.width(),
         height: config.imgBox.height()
       });
+    },
+
+    /**
+     * @function render
+     * @description 首次渲染
+     */
+    render: function(){
+      renderTpl();
+      config.imgBox = $('.img-item');
+      this.loadImg(0);
+      $('.page-total').text(config.pageCount);
     }
   };
 
@@ -185,10 +196,7 @@
     },_option);
     $.extend(config, option);
 
-    renderTpl();
-    config.imgBox = $('.img-item');
-    action.loadImg(0);
-    $('.page-total').text(config.pageCount);
+    action.render();
     //p2m方法可能未适配完，做延时处理
     setTimeout(function(){
       config.minWidth = option.previewBox.width();
