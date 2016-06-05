@@ -38,3 +38,4 @@ pdf.pdfView({
 ```
 
 ### 3.下载查看index.html预览demo
+![demo](./demo/images/demo.png)
