@@ -1,6 +1,6 @@
 # pdf-img-viewer
 
-###1.基于h5-base.js
+### 1.基于h5-base.js
 [h5-base](https://github.com/geneking/h5-common)
 
 ### 2.如何调用
